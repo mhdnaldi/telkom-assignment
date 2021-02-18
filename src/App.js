@@ -1,9 +1,14 @@
-import Home from "./containers/Home";
+import Home from "./containers/Home/Home";
+import Product from "./containers/Product/Product";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className='App'>
-      <Home />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/product' component={Product} />
+      </Switch>
     </div>
   );
 }
