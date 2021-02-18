@@ -1,0 +1,52 @@
+.route {
+  display: grid;
+  grid-template-columns: 60px 60px 60px 1fr 1fr;
+  place-items: center;
+  /* width: 400px; */
+}
+
+.route-icon {
+  position: relative;
+}
+
+.route-icon img {
+  width: 20px;
+}
+
+.notif {
+  position: absolute;
+  border: 1px solid #fff;
+  right: -5px;
+  top: -2px;
+  background-color: red;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  border-radius: 50%;
+  width: 12px;
+}
+
+.route-icon-market {
+  display: flex;
+  border-left: 1px solid rgb(230, 230, 230);
+}
+.route-icon-market img {
+  width: 20px;
+  margin-left: 20px;
+}
+.route-icon-market p {
+  font-size: 13px;
+  text-indent: 5px;
+}
+.route-icon-profile {
+  display: flex;
+}
+.route-icon-profile .profile-image {
+  width: 20px;
+  border-radius: 50%;
+  background-color: red;
+}
+.route-icon-profile p {
+  font-size: 13px;
+  margin-left: 5px;
+}
