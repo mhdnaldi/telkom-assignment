@@ -3,7 +3,7 @@ import "./header.css";
 
 import Logo from "../UI/Logo/Logo";
 import Input from "../UI/Input/Input";
-import Route from "../UI/Route/Route";
+import Navigation from "../UI/Navigation/Navigation";
 
 const header = (props) => {
   return (
@@ -11,7 +11,7 @@ const header = (props) => {
       <Logo />
       <p style={{ fontSize: "13px" }}>Kategori</p>
       <Input />
-      <Route />
+      <Navigation />
     </div>
   );
 };

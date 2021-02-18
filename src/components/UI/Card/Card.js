@@ -4,10 +4,10 @@ import "./Card.css";
 const cart = (props) => {
   return (
     <div className='card'>
-      <div className='card-image'></div>
-      <div className='card-title'>TITLE</div>
-      <div className='card-price'>Rp. 123123</div>
-      <div className='card-market'>TOKO</div>
+      <img className='card-image' src={props.img} />
+      <div className='card-title'>{props.name}</div>
+      <div className='card-price'>Rp. {props.price}</div>
+      <div className='card-market'>{props.store}</div>
     </div>
   );
 };

@@ -36,7 +36,7 @@
         },
         {
             "id": "2001",
-            "name": "Jaket Virendra Polos. Tersedia Semua Logo Club Bola. Jacket Soccer Waterproof Promo",
+            "name": "Jaket Virendra Polos Original",
             "price": 200000,
             "stuff": {
                 "image_url": "https://s0.bukalapak.com/img/5759820062/small/Jaket_Virendra_Polos_Tersedia_Semua_Logo_Club_Bola_Jacket_So.jpg",
@@ -53,7 +53,7 @@
         },
         {
             "id": "2024",
-            "name": "Baju Koko Shaquille Biru Kemeja Soccer Baju Sholat Muslim Gamis Kemko",
+            "name": "Baju Koko Shaquille Biru Original",
             "price": 140000,
             "stuff": {
                 "image_url": "https://s2.bukalapak.com/img/2681803562/small/Baju_Koko_Shaquille_Hiaju_Kemeja_Soccer_Baju_Sholat_Muslim_G.jpg",
@@ -84,13 +84,10 @@
                 "id": 2,
                 "name": "Sepatu Pria"
             }
-        }
-    ]
-}{
-    "items": [
+        },
         {
-            "id": "1923",
-            "name": "Tas Pria Ransel Distro Original",
+            "id": "1924",
+            "name": "Tas Pria Ransel Distro Original (Second)",
             "price": 100000,
             "stuff": {
                 "image_url": "https://s2.bukalapak.com/img/2584349902/small/Tas_Pria_Ransel__Distro_Original_Bandung________________tas_.jpg",
@@ -106,8 +103,8 @@
             }
         },
         {
-            "id": "1987",
-            "name": "Sepatu Running Adidas Original",
+            "id": "1988",
+            "name": "Sepatu Running Adidas Original (Second)",
             "price": 175000,
             "stuff": {
                 "image_url": "https://s1.bukalapak.com/img/6024418382/small/SEPATU.jpg",
@@ -123,8 +120,8 @@
             }
         },
         {
-            "id": "2001",
-            "name": "Jaket Virendra Polos. Tersedia Semua Logo Club Bola. Jacket Soccer Waterproof Promo",
+            "id": "2002",
+            "name": "Jaket Virendra Polos (Second)",
             "price": 200000,
             "stuff": {
                 "image_url": "https://s0.bukalapak.com/img/5759820062/small/Jaket_Virendra_Polos_Tersedia_Semua_Logo_Club_Bola_Jacket_So.jpg",
@@ -140,8 +137,8 @@
             }
         },
         {
-            "id": "2024",
-            "name": "Baju Koko Shaquille Biru Kemeja Soccer Baju Sholat Muslim Gamis Kemko",
+            "id": "2025",
+            "name": "Baju Koko Shaquille Biru (Second)",
             "price": 140000,
             "stuff": {
                 "image_url": "https://s2.bukalapak.com/img/2681803562/small/Baju_Koko_Shaquille_Hiaju_Kemeja_Soccer_Baju_Sholat_Muslim_G.jpg",
@@ -157,8 +154,8 @@
             }
         },
         {
-            "id": "2531",
-            "name": "SEPATU SNEAKERS PRIA SEPATU PRIA",
+            "id": "2532",
+            "name": "SEPATU SNEAKERS PRIA SEPATU PRIA (Second)",
             "price": 185000,
             "stuff": {
                 "image_url": "https://s1.bukalapak.com/img/6453738872/small/1530104514938_scaled.jpg",

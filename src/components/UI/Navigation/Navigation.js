@@ -1,12 +1,12 @@
 import React from "react";
-import "./Route.css";
+import "./Navigation.css";
 
 import bell from "../../../assets/images/bell.png";
 import email from "../../../assets/images/mail.png";
 import market from "../../../assets/images/market.png";
 import shoppingCart from "../../../assets/images/shopping-cart.png";
 
-const route = (props) => {
+const navigation = (props) => {
   return (
     <div className='route'>
       <div className='route-icon'>
@@ -33,4 +33,4 @@ const route = (props) => {
   );
 };
 
-export default route;
+export default navigation;
