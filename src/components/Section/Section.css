@@ -1,0 +1,32 @@
+.section {
+  width: 90%;
+  margin: 20px auto;
+  height: 60px;
+  border-bottom: 2px solid rgb(230, 230, 230);
+  display: flex;
+  align-items: center;
+}
+
+.section-page {
+  margin: 0 10px;
+  height: 100%;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  border: 4px solid rgba(0, 0, 0, 0);
+}
+
+.section-page img {
+  width: 25px;
+}
+
+.section-page p {
+  font-weight: bold;
+  text-indent: 8px;
+}
+
+.section-page:hover {
+  border-bottom: 4px solid rgb(75, 223, 75);
+  color: rgb(75, 223, 75);
+  cursor: pointer;
+}

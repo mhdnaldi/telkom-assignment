@@ -1,0 +1,7 @@
+.main-all-products {
+  width: 90%;
+  margin: 5px auto;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
