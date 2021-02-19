@@ -3,7 +3,7 @@ import "./Card.css";
 
 const cart = (props) => {
   return (
-    <div className='card'>
+    <div className='card' onClick={props.click}>
       <img className='card-image' src={props.img} />
       <div className='card-title'>{props.name}</div>
       <div className='card-price'>Rp. {props.price}</div>

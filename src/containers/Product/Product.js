@@ -1,50 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import "./Product.css";
+import { connect } from "react-redux";
 
 const Product = (props) => {
+  let [itemName, setItemName] = useState([props.dataById.name]);
+
+  const setColorHandler = (color) => {
+    let newColor = [];
+    newColor.push(` - ${color}`);
+    if (itemName.length > 1) {
+      itemName.pop();
+      setItemName(itemName.concat(newColor[newColor.length - 1]));
+    } else {
+      setItemName(itemName.concat(newColor[newColor.length - 1]));
+    }
+  };
+
+  const setSizeHandler = (size) => {
+    let newSize = [];
+    newSize.push(`, ${size}`);
+    if (itemName.length > 2) {
+      itemName.pop();
+      setItemName(itemName.concat(newSize[newSize.length - 1]));
+    } else {
+      setItemName(itemName.concat(newSize[newSize.length - 1]));
+    }
+  };
+
+  let smallImage = [];
+  let variantColor = null;
+  let variantSize = null;
+  for (let i = 0; i < 5; i++) {
+    smallImage.push(props.dataById.stuff.image_url);
+  }
+
+  variantColor = props.dataById.variants.color.map((el) => (
+    <div
+      className='variant-colors'
+      key={Math.random()}
+      onClick={() => setColorHandler(el)}>
+      {el}
+    </div>
+  ));
+
+  variantSize = props.dataById.variants.size.map((el) => (
+    <div key={Math.random()} onClick={() => setSizeHandler(el)}>
+      {el}
+    </div>
+  ));
+
+  smallImage = smallImage.map((el) => (
+    <img className='small' src={el} key={Math.random()} alt='' />
+  ));
+
   return (
     <div>
       <Header />
       <div className='product'>
         <div className='product-img'>
-          <div className='img-big'></div>
-          <div className='img-small'>
-            <div className='small'></div>
-            <div className='small'></div>
-            <div className='small'></div>
-            <div className='small'></div>
-            <div className='small'></div>
-          </div>
+          <img
+            className='img-big'
+            src={props.dataById.stuff.image_url}
+            alt=''
+          />
+          <div className='img-small'>{smallImage}</div>
         </div>
         <div className='product-details'>
-          <h3>TITLE</h3>
+          <h3>{itemName}</h3>
           <div className='product-price product-info'>
             <p>HARGA</p>
-            <strong>Rp. 200.000</strong>
+            <strong>Rp.{props.dataById.price}</strong>
           </div>
           <div className='product-colors product-info'>
             <p>WARNA</p>
             <div className='product-variant'>
               <p>Pilih variant</p>
-              <div className='variants'>
-                <div className='variant-colors'>Hijau</div>
-                <div className='variant-colors'>Abu-abu</div>
-                <div className='variant-colors'>Coklat</div>
-                <div className='variant-colors'>Putih</div>
-                <div className='variant-colors'>Biru</div>
-              </div>
+              <div className='variants'>{variantColor}</div>
             </div>
           </div>
           <div className='product-size product-info'>
             <p>UKURAN</p>
             <div className='product-variant'>
               <p>Pilih variant</p>
-              <div className='variants'>
-                <div>M</div>
-                <div>L</div>
-                <div>XL</div>
-              </div>
+              <div className='variants'>{variantSize}</div>
             </div>
           </div>
         </div>
@@ -53,4 +92,11 @@ const Product = (props) => {
     </div>
   );
 };
-export default Product;
+
+const mapStateToProps = (state) => {
+  return {
+    dataById: state.dataById,
+  };
+};
+
+export default connect(mapStateToProps)(Product);

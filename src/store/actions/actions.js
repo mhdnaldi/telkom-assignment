@@ -25,3 +25,29 @@ export const fetchFailed = (err) => {
     error: err,
   };
 };
+
+// GET BY ID
+
+export const getByIdStart = (id) => {
+  return (dispatch) =>
+    axios
+      .get(`http://localhost:8000/items/${id}`)
+      .then((res) => {
+        dispatch(getByIdSuccess(res.data));
+      })
+      .catch((err) => dispatch(getByIdFailed(err.message)));
+};
+
+export const getByIdSuccess = (data) => {
+  return {
+    type: actionTypes.GET_BY_ID_SUCCESS,
+    data: data,
+  };
+};
+
+export const getByIdFailed = (err) => {
+  return {
+    type: actionTypes.GET_BY_ID_FAILED,
+    error: err,
+  };
+};
