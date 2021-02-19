@@ -15,6 +15,20 @@
             "category": {
                 "id": 1,
                 "name": "Asessoris Pria"
+            },
+            "variants": {
+                "color": [
+                    "Hijau",
+                    "Coklat",
+                    "Abu-abu",
+                    "Putih",
+                    "Biru"
+                ],
+                "size": [
+                    "M",
+                    "L",
+                    "XL"
+                ]
             }
         },
         {
@@ -32,6 +46,20 @@
             "category": {
                 "id": 2,
                 "name": "Sepatu Pria"
+            },
+            "variants": {
+                "color": [
+                    "Hijau",
+                    "Coklat",
+                    "Abu-abu",
+                    "Putih",
+                    "Biru"
+                ],
+                "size": [
+                    "M",
+                    "L",
+                    "XL"
+                ]
             }
         },
         {
@@ -49,11 +77,25 @@
             "category": {
                 "id": 3,
                 "name": "Pakaian"
+            },
+            "variants": {
+                "color": [
+                    "Hijau",
+                    "Coklat",
+                    "Abu-abu",
+                    "Putih",
+                    "Biru"
+                ],
+                "size": [
+                    "M",
+                    "L",
+                    "XL"
+                ]
             }
         },
         {
             "id": "2024",
-            "name": "Baju Koko Shaquille Biru Original",
+            "name": "Baju Koko Shaquille Original",
             "price": 140000,
             "stuff": {
                 "image_url": "https://s2.bukalapak.com/img/2681803562/small/Baju_Koko_Shaquille_Hiaju_Kemeja_Soccer_Baju_Sholat_Muslim_G.jpg",
@@ -66,6 +108,20 @@
             "category": {
                 "id": 3,
                 "name": "Pakaian"
+            },
+            "variants": {
+                "color": [
+                    "Hijau",
+                    "Coklat",
+                    "Abu-abu",
+                    "Putih",
+                    "Biru"
+                ],
+                "size": [
+                    "M",
+                    "L",
+                    "XL"
+                ]
             }
         },
         {
@@ -83,6 +139,20 @@
             "category": {
                 "id": 2,
                 "name": "Sepatu Pria"
+            },
+            "variants": {
+                "color": [
+                    "Hijau",
+                    "Coklat",
+                    "Abu-abu",
+                    "Putih",
+                    "Biru"
+                ],
+                "size": [
+                    "M",
+                    "L",
+                    "XL"
+                ]
             }
         },
         {
@@ -100,6 +170,20 @@
             "category": {
                 "id": 1,
                 "name": "Asessoris Pria"
+            },
+            "variants": {
+                "color": [
+                    "Hijau",
+                    "Coklat",
+                    "Abu-abu",
+                    "Putih",
+                    "Biru"
+                ],
+                "size": [
+                    "M",
+                    "L",
+                    "XL"
+                ]
             }
         },
         {
@@ -117,6 +201,20 @@
             "category": {
                 "id": 2,
                 "name": "Sepatu Pria"
+            },
+            "variants": {
+                "color": [
+                    "Hijau",
+                    "Coklat",
+                    "Abu-abu",
+                    "Putih",
+                    "Biru"
+                ],
+                "size": [
+                    "M",
+                    "L",
+                    "XL"
+                ]
             }
         },
         {
@@ -134,11 +232,25 @@
             "category": {
                 "id": 3,
                 "name": "Pakaian"
+            },
+            "variants": {
+                "color": [
+                    "Hijau",
+                    "Coklat",
+                    "Abu-abu",
+                    "Putih",
+                    "Biru"
+                ],
+                "size": [
+                    "M",
+                    "L",
+                    "XL"
+                ]
             }
         },
         {
             "id": "2025",
-            "name": "Baju Koko Shaquille Biru (Second)",
+            "name": "Baju Koko Shaquille (Second)",
             "price": 110000,
             "stuff": {
                 "image_url": "https://s2.bukalapak.com/img/2681803562/small/Baju_Koko_Shaquille_Hiaju_Kemeja_Soccer_Baju_Sholat_Muslim_G.jpg",
@@ -151,6 +263,20 @@
             "category": {
                 "id": 3,
                 "name": "Pakaian"
+            },
+            "variants": {
+                "color": [
+                    "Hijau",
+                    "Coklat",
+                    "Abu-abu",
+                    "Putih",
+                    "Biru"
+                ],
+                "size": [
+                    "M",
+                    "L",
+                    "XL"
+                ]
             }
         },
         {
@@ -168,6 +294,20 @@
             "category": {
                 "id": 2,
                 "name": "Sepatu Pria"
+            },
+            "variants": {
+                "color": [
+                    "Hijau",
+                    "Coklat",
+                    "Abu-abu",
+                    "Putih",
+                    "Biru"
+                ],
+                "size": [
+                    "M",
+                    "L",
+                    "XL"
+                ]
             }
         }
     ]
