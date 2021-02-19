@@ -24,3 +24,14 @@
 .btn-see-cart {
   background-color: rgb(50, 201, 50);
 }
+.btn-see-cart:hover {
+  background-color: rgb(47, 177, 47);
+}
+
+.btn-checkout {
+  background-color: rgb(255, 102, 0);
+  width: 100%;
+}
+.btn-checkout:hover {
+  background-color: rgb(236, 95, 0);
+}

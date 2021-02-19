@@ -1,7 +1,7 @@
 .product {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  width: 90%;
+  width: 80%;
   margin: 20px auto;
 }
 

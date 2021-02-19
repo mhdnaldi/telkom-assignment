@@ -31,11 +31,16 @@ const reducer = (state = initialState, action) => {
       };
 
     case actionTypes.ADD_TO_CART:
-      return {
-        ...state,
-        cart: state.cart.concat(action.data),
-        showModal: true,
-      };
+      let id = state.cart.map((el) => el.id);
+      if (!id.includes(action.data.id)) {
+        return {
+          ...state,
+          cart: state.cart.concat(action.data),
+          showModal: true,
+        };
+      } else {
+        return state;
+      }
 
     case actionTypes.REMOVE_FROM_CART:
       return {

@@ -16,17 +16,15 @@ const modal = (props) => {
         </div>
 
         <h3>Berhasil Ditambahkan </h3>
-        <div className='modal'>
-          <div className='modal-details'>
-            {props.cartData.map((el) => (
-              <div>
-                <img className='modal-img' src={el.image} alt='' />
-                <p>{el.name}</p>
-              </div>
-            ))}
+        {props.cartData.map((el) => (
+          <div className='modal' key={Math.random()}>
+            <div className='modal-details'>
+              <img className='modal-img' src={el.image} alt='' />
+              <p>{el.name}</p>
+            </div>
+            <Button class='btn-see-cart'>Lihat Keranjang</Button>
           </div>
-          <Button class='btn-see-cart'>Lihat Keranjang</Button>
-        </div>
+        ))}
       </div>
     </React.Fragment>
   );

@@ -7,7 +7,13 @@ const cart = (props) => {
       <img className='card-image' src={props.img} />
       <div className='card-title'>{props.name}</div>
       <div className='card-price'>Rp. {props.price}</div>
-      <div className='card-market'>{props.store}</div>
+      <div className='card-market'>
+        <img
+          src='https://ecs7.tokopedia.net/img/autocomplete/ic_pm.png'
+          alt=''
+        />
+        {props.store}
+      </div>
     </div>
   );
 };

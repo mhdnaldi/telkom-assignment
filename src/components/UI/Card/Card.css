@@ -32,4 +32,11 @@
   width: 95%;
   margin: 5px auto;
   font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.card-market img {
+  width: 15px;
+  margin-right: 5px;
 }
