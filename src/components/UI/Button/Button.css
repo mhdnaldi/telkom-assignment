@@ -1,5 +1,26 @@
 .button {
-  width: 80px;
+  outline: none;
+  border: none;
+  width: 150px;
   height: 40px;
-  background-color: lightcoral;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-add-to-cart {
+  background-color: rgb(255, 102, 0);
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  margin-top: -20px;
+}
+
+.btn-add-to-cart:hover {
+  background-color: rgb(236, 95, 0);
+}
+
+.btn-see-cart {
+  background-color: rgb(50, 201, 50);
 }

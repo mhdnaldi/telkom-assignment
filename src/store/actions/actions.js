@@ -51,3 +51,23 @@ export const getByIdFailed = (err) => {
     error: err,
   };
 };
+
+export const addToCart = (data) => {
+  return {
+    type: actionTypes.ADD_TO_CART,
+    data: data,
+  };
+};
+
+export const removeFromCart = (data) => {
+  return {
+    type: actionTypes.REMOVE_FROM_CART,
+    data: data,
+  };
+};
+
+export const closeModal = () => {
+  return {
+    type: actionTypes.CLOSE_MODAL,
+  };
+};

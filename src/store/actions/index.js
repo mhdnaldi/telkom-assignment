@@ -1,1 +1,7 @@
-export { fetchStart, getByIdStart } from "./actions";
+export {
+  fetchStart,
+  getByIdStart,
+  addToCart,
+  removeFromCart,
+  closeModal,
+} from "./actions";

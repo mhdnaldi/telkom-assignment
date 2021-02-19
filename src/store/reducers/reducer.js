@@ -1,8 +1,10 @@
 import * as actionTypes from "../actions/actionTypes";
 const initialState = {
   data: [],
+  cart: [],
   error: null,
   dataById: {},
+  showModal: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -18,7 +20,6 @@ const reducer = (state = initialState, action) => {
         error: action.error,
       };
     case actionTypes.GET_BY_ID_SUCCESS:
-      console.log(action.data);
       return {
         ...state,
         dataById: action.data,
@@ -27,6 +28,25 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.error,
+      };
+
+    case actionTypes.ADD_TO_CART:
+      return {
+        ...state,
+        cart: state.cart.concat(action.data),
+        showModal: true,
+      };
+
+    case actionTypes.REMOVE_FROM_CART:
+      return {
+        ...state,
+        cart: state.cart.splice(0, action.data),
+      };
+
+    case actionTypes.CLOSE_MODAL:
+      return {
+        ...state,
+        showModal: null,
       };
     default:
       return state;

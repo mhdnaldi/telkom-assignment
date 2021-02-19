@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import "./Product.css";
 import { connect } from "react-redux";
+import Button from "../../components/UI/Button/Button";
+import Modal from "../../components/UI/Modal/Modal";
+import * as actions from "../../store/actions/index";
 
 const Product = (props) => {
   let [itemName, setItemName] = useState([props.dataById.name]);
@@ -54,8 +57,20 @@ const Product = (props) => {
     <img className='small' src={el} key={Math.random()} alt='' />
   ));
 
+  const addToCartHandler = () => {
+    const cart = {
+      id: props.dataById.id,
+      name: itemName.join(""),
+      price: props.dataById.price,
+      image: props.dataById.stuff.image_url,
+      qty: 1,
+    };
+    props.addToCart(cart);
+  };
+
   return (
     <div>
+      {props.showModal && <Modal />}
       <Header />
       <div className='product'>
         <div className='product-img'>
@@ -88,7 +103,11 @@ const Product = (props) => {
           </div>
         </div>
       </div>
-      <div className='checkout-footer'></div>
+      <div className='checkout-footer'>
+        <Button click={() => addToCartHandler()} class='btn-add-to-cart'>
+          Tambah Ke Keranjang
+        </Button>
+      </div>
     </div>
   );
 };
@@ -96,7 +115,14 @@ const Product = (props) => {
 const mapStateToProps = (state) => {
   return {
     dataById: state.dataById,
+    showModal: state.showModal,
   };
 };
 
-export default connect(mapStateToProps)(Product);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (data) => dispatch(actions.addToCart(data)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);
