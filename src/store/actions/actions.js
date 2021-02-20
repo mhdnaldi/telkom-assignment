@@ -60,10 +60,10 @@ export const addToCart = (data) => {
   };
 };
 
-export const removeFromCart = (data) => {
+export const removeFromCart = (id) => {
   return {
     type: actionTypes.REMOVE_FROM_CART,
-    data: data,
+    id,
   };
 };
 
@@ -84,5 +84,11 @@ export const decrement = (id) => {
   return {
     type: actionTypes.DEC_QTY,
     id,
+  };
+};
+
+export const removeAllCartItems = () => {
+  return {
+    type: actionTypes.REMOVE_ALL_CART_ITEMS,
   };
 };

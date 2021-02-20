@@ -12,6 +12,10 @@ const Cart = (props) => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
+    if (props.cartData.length < 1) {
+      setQuantity(0);
+      setTotalPrice(0);
+    }
     if (props.cartData.length > 0) {
       let qty = props.cartData.map((el) => el.qty).reduce((el, i) => el + i);
       setQuantity(qty);
@@ -51,7 +55,11 @@ const Cart = (props) => {
         <div className='item-info'>
           <img className='item-img' src={el.image} alt='' />
           <div>
-            <p style={{ color: "#111", fontSize: "13px" }}>{el.name}</p>
+            <p style={{ color: "#111", fontSize: "13px" }}>
+              {el.name}
+              {el.color}
+              {el.size}
+            </p>
             <strong>
               {el.price.toLocaleString("id", {
                 style: "currency",
@@ -64,7 +72,11 @@ const Cart = (props) => {
           <p>Tulis Catatan untuk Toko</p>
           <div className='configuration'>
             <img src={heart} alt='' />
-            <img src={trash} alt='' />
+            <img
+              src={trash}
+              alt=''
+              onClick={() => props.removeFromCart(el.id)}
+            />
             <div className='dec' onClick={() => props.decrement(i)}>
               <p onClick={() => props.decrement(i)}>-</p>
             </div>
@@ -85,7 +97,7 @@ const Cart = (props) => {
         <div className='cart-details'>
           <div className='cart-details-header'>
             <p>Pilih Semua Produk</p>
-            <strong>Hapus</strong>
+            <strong onClick={() => props.removeAllCartItems()}>Hapus</strong>
           </div>
           {cartItem}
         </div>
@@ -118,6 +130,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     increment: (id) => dispatch(actions.increment(id)),
     decrement: (id) => dispatch(actions.decrement(id)),
+    removeFromCart: (id) => dispatch(actions.removeFromCart(id)),
+    removeAllCartItems: () => dispatch(actions.removeAllCartItems()),
   };
 };
 

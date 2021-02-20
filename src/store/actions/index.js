@@ -6,4 +6,5 @@ export {
   closeModal,
   increment,
   decrement,
+  removeAllCartItems,
 } from "./actions";

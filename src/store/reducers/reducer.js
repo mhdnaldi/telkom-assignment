@@ -44,9 +44,10 @@ const reducer = (state = initialState, action) => {
       }
 
     case actionTypes.REMOVE_FROM_CART:
+      console.log(action.id);
       return {
         ...state,
-        cart: state.cart.splice(0, action.data),
+        cart: state.cart.filter((el) => el.id !== action.id),
       };
 
     case actionTypes.CLOSE_MODAL:
@@ -55,16 +56,15 @@ const reducer = (state = initialState, action) => {
         showModal: null,
       };
 
-    case actionTypes.INC_QTY: {
+    case actionTypes.INC_QTY:
       let inc = [...state.cart];
       inc[action.id].qty += 1;
       return {
         ...state,
         cart: inc,
       };
-    }
 
-    case actionTypes.DEC_QTY: {
+    case actionTypes.DEC_QTY:
       let dec = [...state.cart];
       if (dec[action.id].qty > 1) {
         dec[action.id].qty -= 1;
@@ -73,8 +73,12 @@ const reducer = (state = initialState, action) => {
         ...state,
         cart: dec,
       };
-    }
 
+    case actionTypes.REMOVE_ALL_CART_ITEMS:
+      return {
+        ...state,
+        cart: [],
+      };
     default:
       return state;
   }

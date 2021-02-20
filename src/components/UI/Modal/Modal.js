@@ -25,7 +25,11 @@ const Modal = (props) => {
           <div className='modal' key={Math.random()}>
             <div className='modal-details'>
               <img className='modal-img' src={el.image} alt='' />
-              <p>{el.name}</p>
+              <p>
+                {el.name}
+                {el.color}
+                {el.size}
+              </p>
             </div>
             <Button click={() => toCartPageHandler()} class='btn-see-cart'>
               Lihat Keranjang
