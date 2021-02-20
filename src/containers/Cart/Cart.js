@@ -6,6 +6,7 @@ import Button from "../../components/UI/Button/Button";
 import trash from "../../assets/images/trash.png";
 import heart from "../../assets/images/heart.png";
 import * as actions from "../../store/actions/index";
+import check from "../../assets/images/check.png";
 
 const Cart = (props) => {
   const [quantity, setQuantity] = useState(0);
@@ -46,6 +47,12 @@ const Cart = (props) => {
     cartItem = props.cartData.map((el, i) => (
       <div className='cart-details-info' key={Math.random()}>
         <div className='store-info'>
+          {/* props.isSelectedHandler itu dispatch action IS_SELECTED */}
+          <div
+            className='selected'
+            onClick={() => props.isSelectedHandler(el.id)}>
+            {el.checked && <img className='is-selected' src={check} alt='' />}
+          </div>
           <img
             src='https://ecs7.tokopedia.net/img/autocomplete/ic_pm.png'
             alt=''
@@ -123,6 +130,8 @@ const Cart = (props) => {
 const mapStateToProps = (state) => {
   return {
     cartData: state.cart,
+    isSelected: state.isSelected,
+    selectedItem: state.selectedItem,
   };
 };
 
@@ -132,6 +141,7 @@ const mapDispatchToProps = (dispatch) => {
     decrement: (id) => dispatch(actions.decrement(id)),
     removeFromCart: (id) => dispatch(actions.removeFromCart(id)),
     removeAllCartItems: () => dispatch(actions.removeAllCartItems()),
+    isSelectedHandler: (id) => dispatch(actions.isSelected(id)),
   };
 };
 

@@ -42,6 +42,31 @@
   height: 40px;
 }
 
+.store-info .selected {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(230, 230, 230);
+  margin-right: 5px;
+  border-radius: 2px;
+  position: relative;
+  background-color: rgb(50, 201, 50);
+}
+
+.store-info .selected:hover {
+  background-color: #fff;
+}
+
+.store-info .selected .is-selected {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -5px;
+  margin-left: -5px;
+}
+
 .store-info img {
   width: 15px;
   margin-right: 5px;

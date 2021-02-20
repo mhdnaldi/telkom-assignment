@@ -92,3 +92,10 @@ export const removeAllCartItems = () => {
     type: actionTypes.REMOVE_ALL_CART_ITEMS,
   };
 };
+
+export const isSelected = (id) => {
+  return {
+    type: actionTypes.IS_SELECTED,
+    id,
+  };
+};

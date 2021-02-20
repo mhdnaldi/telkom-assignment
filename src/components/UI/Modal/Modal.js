@@ -12,6 +12,7 @@ const Modal = (props) => {
     history.push("/cart");
     props.closeModal();
   };
+
   return (
     <React.Fragment>
       <Backdrop />

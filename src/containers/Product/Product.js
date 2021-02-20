@@ -14,10 +14,12 @@ const Product = (props) => {
   let smallImage = [];
   let variantColor = null;
   let variantSize = null;
-  for (let i = 0; i < 5; i++) {
-    smallImage.push(props.dataById.stuff.image_url);
-  }
 
+  if (props.dataById !== null) {
+    for (let i = 0; i < 5; i++) {
+      smallImage.push(props.dataById.stuff.image_url);
+    }
+  }
   variantColor = props.dataById.variants.color.map((el) => (
     <div
       className='variant-colors'
@@ -47,6 +49,7 @@ const Product = (props) => {
       image: props.dataById.stuff.image_url,
       store: props.dataById.store.name,
       qty: 1,
+      checked: true,
     };
     props.addToCart(cart);
   };

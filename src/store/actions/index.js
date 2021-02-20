@@ -7,4 +7,5 @@ export {
   increment,
   decrement,
   removeAllCartItems,
+  isSelected,
 } from "./actions";

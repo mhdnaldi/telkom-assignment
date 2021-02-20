@@ -12,3 +12,4 @@ export const REMOVE_ALL_CART_ITEMS = "REMOVE_ALL_CART_ITEMS";
 export const INC_QTY = "INC_QTY";
 export const DEC_QTY = "DEC_QTY";
 export const CLOSE_MODAL = "CLOSE_MODAL";
+export const IS_SELECTED = "IS_SELECTED";

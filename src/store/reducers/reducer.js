@@ -5,6 +5,8 @@ const initialState = {
   error: null,
   dataById: {},
   showModal: null,
+  isSelected: true,
+  selectedItem: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -79,6 +81,25 @@ const reducer = (state = initialState, action) => {
         ...state,
         cart: [],
       };
+
+    case actionTypes.IS_SELECTED:
+      // state isSelected = true
+      let updatedCart = [...state.cart];
+      let index = updatedCart.findIndex((el) => el.id === action.id);
+      updatedCart[index].checked = !updatedCart[index].checked;
+      let prevPrice = [];
+      prevPrice.push(updatedCart[index].price);
+      console.log(prevPrice);
+      if (!updatedCart[index].checked) {
+        updatedCart[index].price = 0; // PROBLEM
+      } else {
+        // updatedCart[index].price = temp.prevPrice;
+      }
+      return {
+        ...state,
+        cart: updatedCart,
+      };
+
     default:
       return state;
   }

@@ -97,7 +97,7 @@
 .variants div:hover,
 .variants div:active,
 .variants .variant-colors:hover,
-.variants .variant-colors:hover {
+.variants .variant-colors:active {
   color: #111;
   background-color: rgb(180, 180, 180);
   cursor: pointer;
