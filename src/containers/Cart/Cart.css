@@ -1,5 +1,5 @@
 .main-cart {
-  width: 80%;
+  width: 70%;
   margin: 20px auto;
   display: grid;
   grid-template-columns: 2fr 1.2fr;
@@ -78,16 +78,69 @@
   align-items: center;
   margin-top: 5px;
   height: 40px;
+  justify-content: space-between;
 }
 
 .item-config p {
   font-weight: bold;
   font-size: 12px;
   color: rgb(50, 201, 50);
+  cursor: pointer;
+}
+
+.item-config .configuration {
+  display: flex;
+  align-items: center;
+}
+
+.item-config .configuration img {
+  margin: 0 10px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.item-config .configuration div {
+  /* margin: 0 10px; */
+}
+
+.configuration .qty {
+  text-align: center;
+  border-bottom: 0.2px solid rgb(180, 180, 180);
+  width: 50px;
+}
+
+.configuration .inc,
+.configuration .dec {
+  background-color: rgb(180, 180, 180);
+  width: 20px;
+  position: relative;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.configuration .dec {
+  margin-left: 10px;
+}
+
+.configuration .inc:hover,
+.configuration .dec:hover {
+  background-color: rgb(50, 201, 50);
+}
+
+.inc p,
+.dec p {
+  position: absolute;
+  top: -3px;
+  left: 4px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .cart-details-header strong {
   color: rgb(50, 201, 50);
+  cursor: pointer;
 }
 
 .cart-checkout {

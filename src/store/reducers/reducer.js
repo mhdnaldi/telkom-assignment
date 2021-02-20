@@ -30,6 +30,7 @@ const reducer = (state = initialState, action) => {
         error: action.error,
       };
 
+    // CART
     case actionTypes.ADD_TO_CART:
       let id = state.cart.map((el) => el.id);
       if (!id.includes(action.data.id)) {
@@ -53,6 +54,27 @@ const reducer = (state = initialState, action) => {
         ...state,
         showModal: null,
       };
+
+    case actionTypes.INC_QTY: {
+      let inc = [...state.cart];
+      inc[action.id].qty += 1;
+      return {
+        ...state,
+        cart: inc,
+      };
+    }
+
+    case actionTypes.DEC_QTY: {
+      let dec = [...state.cart];
+      if (dec[action.id].qty > 1) {
+        dec[action.id].qty -= 1;
+      }
+      return {
+        ...state,
+        cart: dec,
+      };
+    }
+
     default:
       return state;
   }

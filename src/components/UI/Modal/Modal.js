@@ -3,10 +3,15 @@ import Button from "../Button/Button";
 import Backdrop from "../Backdrop/Backdrop";
 import "./Modal.css";
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 import * as actions from "../../../store/actions/index";
 
-const modal = (props) => {
-  console.log(props.cartData);
+const Modal = (props) => {
+  let history = useHistory();
+  const toCartPageHandler = () => {
+    history.push("/cart");
+    props.closeModal();
+  };
   return (
     <React.Fragment>
       <Backdrop />
@@ -22,7 +27,9 @@ const modal = (props) => {
               <img className='modal-img' src={el.image} alt='' />
               <p>{el.name}</p>
             </div>
-            <Button class='btn-see-cart'>Lihat Keranjang</Button>
+            <Button click={() => toCartPageHandler()} class='btn-see-cart'>
+              Lihat Keranjang
+            </Button>
           </div>
         ))}
       </div>
@@ -42,4 +49,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(modal);
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

@@ -63,6 +63,7 @@ const Product = (props) => {
       name: itemName.join(""),
       price: props.dataById.price,
       image: props.dataById.stuff.image_url,
+      store: props.dataById.store.name,
       qty: 1,
     };
     props.addToCart(cart);

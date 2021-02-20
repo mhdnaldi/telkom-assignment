@@ -52,6 +52,7 @@ export const getByIdFailed = (err) => {
   };
 };
 
+// CART
 export const addToCart = (data) => {
   return {
     type: actionTypes.ADD_TO_CART,
@@ -69,5 +70,19 @@ export const removeFromCart = (data) => {
 export const closeModal = () => {
   return {
     type: actionTypes.CLOSE_MODAL,
+  };
+};
+
+export const increment = (id) => {
+  return {
+    type: actionTypes.INC_QTY,
+    id,
+  };
+};
+
+export const decrement = (id) => {
+  return {
+    type: actionTypes.DEC_QTY,
+    id,
   };
 };

@@ -1,10 +1,64 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Cart.css";
-import { connect } from "react-router-dom";
+import { connect } from "react-redux";
 import Header from "../../components/Header/Header";
 import Button from "../../components/UI/Button/Button";
+import trash from "../../assets/images/trash.png";
+import heart from "../../assets/images/heart.png";
+import * as actions from "../../store/actions/index";
 
 const Cart = (props) => {
+  const [quantity, setQuantity] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    let qty = props.cartData.map((el) => el.qty).reduce((el, i) => el + i);
+    setQuantity(qty);
+
+    let total = props.cartData
+      .map((el) => el.price * el.qty)
+      .reduce((el, i) => el + i);
+    setTotalPrice(total);
+  }, [props.cartData]);
+
+  console.log(props.cartData);
+
+  let cartItem = <p>Loading...</p>;
+  if (props.cartData) {
+    cartItem = props.cartData.map((el, i) => (
+      <div className='cart-details-info' key={Math.random()}>
+        <div className='store-info'>
+          <img
+            src='https://ecs7.tokopedia.net/img/autocomplete/ic_pm.png'
+            alt=''
+          />
+          <p>{el.store}</p>
+        </div>
+        <div className='item-info'>
+          <img className='item-img' src={el.image} alt='' />
+          <div>
+            <p style={{ color: "#111", fontSize: "13px" }}>{el.name}</p>
+            <strong>Rp. {el.price}</strong>
+          </div>
+        </div>
+        <div className='item-config'>
+          <p>Tulis Catatan untuk Toko</p>
+          <div className='configuration'>
+            <img src={heart} alt='' />
+            <img src={trash} alt='' />
+            <div className='dec'>
+              <p onClick={() => props.decrement(i)}>-</p>
+            </div>
+            <div className='qty'>{el.qty}</div>
+            <div className='inc'>
+              <p onClick={() => props.increment(i)}>+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ));
+  }
+
   return (
     <div>
       <Header />
@@ -14,26 +68,7 @@ const Cart = (props) => {
             <p>Pilih Semua Produk</p>
             <strong>Hapus</strong>
           </div>
-          <div className='cart-details-info'>
-            <div className='store-info'>
-              <img
-                src='https://ecs7.tokopedia.net/img/autocomplete/ic_pm.png'
-                alt=''
-              />
-              <p>Store name</p>
-            </div>
-            <div className='item-info'>
-              <div className='item-img'></div>
-              <div>
-                <p>Nama Item</p>
-                <strong>Rp. 200.000</strong>
-              </div>
-            </div>
-            <div className='item-config'>
-              <p>Tulis Catatan untuk Toko</p>
-              <div className='configuration'></div>
-            </div>
-          </div>
+          {cartItem}
         </div>
         <div className='cart-checkout'>
           <div>
@@ -44,14 +79,27 @@ const Cart = (props) => {
               <p>Total Harga</p>
             </div>
             <div>
-              <strong>Rp. 200.000</strong>
+              <strong>Rp. {totalPrice}</strong>
             </div>
           </div>
-          <Button class='btn-checkout'>Beli(3)</Button>
+          <Button class='btn-checkout'>Beli ({quantity})</Button>
         </div>
       </div>
     </div>
   );
 };
 
-export default Cart;
+const mapStateToProps = (state) => {
+  return {
+    cartData: state.cart,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increment: (id) => dispatch(actions.increment(id)),
+    decrement: (id) => dispatch(actions.decrement(id)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
