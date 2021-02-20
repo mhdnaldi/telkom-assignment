@@ -26,14 +26,14 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  border-bottom: 6px solid rgb(180, 180, 180);
+  border-bottom: 6px solid rgb(230, 230, 230);
 }
 
 .cart-details-info {
   display: grid;
   background-color: #fff;
   grid-template-columns: 1fr;
-  border-bottom: 6px solid rgb(180, 180, 180);
+  border-bottom: 6px solid rgb(230, 230, 230);
 }
 
 .store-info {
@@ -100,19 +100,15 @@
   cursor: pointer;
 }
 
-.item-config .configuration div {
-  /* margin: 0 10px; */
-}
-
 .configuration .qty {
   text-align: center;
-  border-bottom: 0.2px solid rgb(180, 180, 180);
+  border-bottom: 0.2px solid rgb(230, 230, 230);
   width: 50px;
 }
 
 .configuration .inc,
 .configuration .dec {
-  background-color: rgb(180, 180, 180);
+  background-color: rgb(230, 230, 230);
   width: 20px;
   position: relative;
   height: 20px;
@@ -126,6 +122,7 @@
 .configuration .inc:hover,
 .configuration .dec:hover {
   background-color: rgb(50, 201, 50);
+  cursor: pointer;
 }
 
 .inc p,
@@ -157,7 +154,7 @@
 }
 
 .cart-total-price {
-  border-top: 1px solid rgb(180, 180, 180);
+  border-top: 1px solid rgb(230, 230, 230);
   padding: 10px 0;
   display: flex;
   justify-content: space-between;

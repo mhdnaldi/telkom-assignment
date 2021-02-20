@@ -86,7 +86,12 @@ const Product = (props) => {
           <h3 style={{ color: "black" }}>{itemName}</h3>
           <div className='product-price product-info'>
             <p>HARGA</p>
-            <strong>Rp.{props.dataById.price}</strong>
+            <strong>
+              {props.dataById.price.toLocaleString("id", {
+                style: "currency",
+                currency: "IDR",
+              })}
+            </strong>
           </div>
           <div className='product-colors product-info'>
             <p>WARNA</p>

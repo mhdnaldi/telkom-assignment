@@ -12,19 +12,33 @@ const Cart = (props) => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    let qty = props.cartData.map((el) => el.qty).reduce((el, i) => el + i);
-    setQuantity(qty);
-
-    let total = props.cartData
-      .map((el) => el.price * el.qty)
-      .reduce((el, i) => el + i);
-    setTotalPrice(total);
+    if (props.cartData.length > 0) {
+      let qty = props.cartData.map((el) => el.qty).reduce((el, i) => el + i);
+      setQuantity(qty);
+      let total = props.cartData
+        .map((el) => el.price * el.qty)
+        .reduce((el, i) => el + i);
+      setTotalPrice(
+        total.toLocaleString("id", {
+          style: "currency",
+          currency: "IDR",
+        })
+      );
+    }
   }, [props.cartData]);
 
-  console.log(props.cartData);
-
-  let cartItem = <p>Loading...</p>;
-  if (props.cartData) {
+  let cartItem = (
+    <p
+      style={{
+        textAlign: "center",
+        fontWeight: "bold",
+        color: "#111",
+        paddingTop: "20px",
+      }}>
+      CART IS EMPTY
+    </p>
+  );
+  if (props.cartData.length > 0) {
     cartItem = props.cartData.map((el, i) => (
       <div className='cart-details-info' key={Math.random()}>
         <div className='store-info'>
@@ -38,7 +52,12 @@ const Cart = (props) => {
           <img className='item-img' src={el.image} alt='' />
           <div>
             <p style={{ color: "#111", fontSize: "13px" }}>{el.name}</p>
-            <strong>Rp. {el.price}</strong>
+            <strong>
+              {el.price.toLocaleString("id", {
+                style: "currency",
+                currency: "IDR",
+              })}
+            </strong>
           </div>
         </div>
         <div className='item-config'>
@@ -46,12 +65,12 @@ const Cart = (props) => {
           <div className='configuration'>
             <img src={heart} alt='' />
             <img src={trash} alt='' />
-            <div className='dec'>
+            <div className='dec' onClick={() => props.decrement(i)}>
               <p onClick={() => props.decrement(i)}>-</p>
             </div>
             <div className='qty'>{el.qty}</div>
-            <div className='inc'>
-              <p onClick={() => props.increment(i)}>+</p>
+            <div className='inc' onClick={() => props.increment(i)}>
+              <p>+</p>
             </div>
           </div>
         </div>
@@ -79,7 +98,7 @@ const Cart = (props) => {
               <p>Total Harga</p>
             </div>
             <div>
-              <strong>Rp. {totalPrice}</strong>
+              <strong>{totalPrice}</strong>
             </div>
           </div>
           <Button class='btn-checkout'>Beli ({quantity})</Button>
