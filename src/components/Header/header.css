@@ -6,6 +6,46 @@
   background-color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: grid;
+
   align-items: center;
   grid-template-columns: 200px 70px 1fr 1fr;
+}
+
+.header p {
+  font-size: 13px;
+}
+
+.burger-menu {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .header {
+    grid-template-columns: 1fr 2fr 0.5fr;
+    padding: 0;
+    place-items: center;
+    width: 100%;
+  }
+  .header p {
+    display: none;
+  }
+
+  .burger-menu {
+    width: 60px;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    height: 80%;
+  }
+
+  .burger-menu div {
+    height: 6px;
+    background-color: rgb(230, 230, 230);
+    width: 60%;
+    border-radius: 2px;
+  }
+
+  .burger-menu:hover div {
+    background-color: rgb(180, 180, 180);
+  }
 }

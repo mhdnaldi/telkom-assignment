@@ -69,7 +69,7 @@ const Product = (props) => {
             <div className='img-small'>{smallImage}</div>
           </div>
           <div className='product-details'>
-            <h3 style={{ color: "black" }}>
+            <h3>
               {props.dataById.name}
               {color}
               {size}

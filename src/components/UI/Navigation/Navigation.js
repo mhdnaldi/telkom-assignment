@@ -11,18 +11,18 @@ const navigation = (props) => {
     <div className='route'>
       <div className='route-icon'>
         <div className='notif'>1</div>
-        <img src={shoppingCart} />
+        <img src={shoppingCart} alt='' />
       </div>
       <div className='route-icon'>
         <div className='notif'>2</div>
-        <img src={bell} />
+        <img src={bell} alt='' />
       </div>
       <div className='route-icon'>
         <div className='notif'>3</div>
-        <img src={email} />
+        <img src={email} alt='' />
       </div>
       <div className='route-icon-market'>
-        <img src={market} />
+        <img src={market} alt='' />
         <p>Toko</p>
       </div>
       <div className='route-icon-profile'>

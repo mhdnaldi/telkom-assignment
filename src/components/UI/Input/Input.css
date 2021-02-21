@@ -25,3 +25,9 @@
   width: 13px;
   margin: 7px;
 }
+
+@media (max-width: 700px) {
+  .input input[type="text"] {
+    width: 100%;
+  }
+}

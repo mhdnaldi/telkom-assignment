@@ -93,7 +93,8 @@ export const removeAllCartItems = () => {
   };
 };
 
-export const isSelected = (id) => {
+export const isSelected = (id, event) => {
+  console.log(event);
   return {
     type: actionTypes.IS_SELECTED,
     id,

@@ -53,3 +53,9 @@
   font-size: 13px;
   margin-left: 5px;
 }
+
+@media (max-width: 700px) {
+  .route {
+    display: none;
+  }
+}

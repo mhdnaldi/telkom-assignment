@@ -15,9 +15,14 @@ const Header = (props) => {
   return (
     <div className='header' onClick={() => homePageHandler()}>
       <Logo />
-      <p style={{ fontSize: "13px" }}>Kategori</p>
+      <p>Kategori</p>
       <Input />
       <Navigation />
+      <div className='burger-menu'>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 };

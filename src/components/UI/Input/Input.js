@@ -7,7 +7,7 @@ const input = (props) => {
     <div className='input'>
       <input type='text' placeholder='Search' />
       <div className='search-img'>
-        <img src={searchLogo} />
+        <img src={searchLogo} alt='' />
       </div>
     </div>
   );

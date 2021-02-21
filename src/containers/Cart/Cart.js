@@ -32,25 +32,14 @@ const Cart = (props) => {
     }
   }, [props.cartData]);
 
-  let cartItem = (
-    <p
-      style={{
-        textAlign: "center",
-        fontWeight: "bold",
-        color: "#111",
-        paddingTop: "20px",
-      }}>
-      CART IS EMPTY
-    </p>
-  );
+  let cartItem = <p className='empty-cart'>CART IS EMPTY</p>;
   if (props.cartData.length > 0) {
     cartItem = props.cartData.map((el, i) => (
       <div className='cart-details-info' key={Math.random()}>
         <div className='store-info'>
-          {/* props.isSelectedHandler itu dispatch action IS_SELECTED */}
           <div
             className='selected'
-            onClick={() => props.isSelectedHandler(el.id)}>
+            onClick={(event) => props.isSelectedHandler(el.id, event)}>
             {el.checked && <img className='is-selected' src={check} alt='' />}
           </div>
           <img
@@ -130,8 +119,6 @@ const Cart = (props) => {
 const mapStateToProps = (state) => {
   return {
     cartData: state.cart,
-    isSelected: state.isSelected,
-    selectedItem: state.selectedItem,
   };
 };
 
@@ -141,7 +128,7 @@ const mapDispatchToProps = (dispatch) => {
     decrement: (id) => dispatch(actions.decrement(id)),
     removeFromCart: (id) => dispatch(actions.removeFromCart(id)),
     removeAllCartItems: () => dispatch(actions.removeAllCartItems()),
-    isSelectedHandler: (id) => dispatch(actions.isSelected(id)),
+    isSelectedHandler: (id, event) => dispatch(actions.isSelected(id, event)),
   };
 };
 
