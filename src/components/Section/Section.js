@@ -10,19 +10,19 @@ const section = (props) => {
   return (
     <div className='section'>
       <div className='section-page'>
-        <img src={product} />
+        <img src={product} alt='' />
         <p>Produk</p>
       </div>
       <div className='section-page'>
-        <img src={market} />
+        <img src={market} alt='' />
         <p>Toko</p>
       </div>
       <div className='section-page'>
-        <img src={profile} />
+        <img src={profile} alt='' />
         <p>Profil</p>
       </div>
       <div className='section-page'>
-        <img src={catalog} />
+        <img src={catalog} alt='' />
         <p>Katalog</p>
       </div>
     </div>

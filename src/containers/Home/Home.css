@@ -6,3 +6,15 @@
   display: grid;
   grid-template-columns: 1fr 3fr 100px;
 }
+
+@media (max-width: 1000px) {
+  .grid {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-container {
+    grid-template-columns: 1fr;
+  }
+}

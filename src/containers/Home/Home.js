@@ -16,13 +16,13 @@ const Home = (props) => {
     <div className='home'>
       <Header />
       <div className='home-container'>
-        <div></div>
+        <div className='grid'></div>
         <div>
           <Section />
           <Filter />
           <Main />
         </div>
-        <div></div>
+        <div className='grid'></div>
       </div>
     </div>
   );

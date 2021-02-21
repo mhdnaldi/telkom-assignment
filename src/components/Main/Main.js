@@ -2,7 +2,7 @@ import React from "react";
 import "./Main.css";
 import Card from "../UI/Card/Card";
 import { connect } from "react-redux";
-import { useHistory, withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import * as actions from "../../store/actions/index";
 
 const Main = (props) => {

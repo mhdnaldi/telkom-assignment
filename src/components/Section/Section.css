@@ -30,3 +30,19 @@
   color: rgb(75, 223, 75);
   cursor: pointer;
 }
+
+@media (max-width: 400px) {
+  .section {
+    width: 375px;
+  }
+
+  .section-page img {
+    width: 20px;
+  }
+
+  .section-page p {
+    font-size: 10px;
+    font-weight: bold;
+    text-indent: 8px;
+  }
+}
