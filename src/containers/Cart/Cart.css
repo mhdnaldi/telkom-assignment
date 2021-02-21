@@ -190,7 +190,7 @@
   align-items: center;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .main-cart {
     grid-template-columns: 1fr;
     width: 80%;
@@ -206,7 +206,7 @@
   }
 
   .item-config p {
-    font-size: 8px;
+    margin-left: 5px;
   }
 
   .inc p,

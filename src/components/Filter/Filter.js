@@ -6,7 +6,7 @@ const filter = (props) => {
     <div className='filter'>
       <div>
         <p>
-          Menampilkan 20 produk (<strong>1-20</strong> dari <strong>100</strong>
+          Menampilkan 10 produk (<strong>1-10</strong> dari <strong>100</strong>
           )
         </p>
       </div>

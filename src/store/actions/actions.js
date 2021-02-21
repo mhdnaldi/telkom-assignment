@@ -3,12 +3,9 @@ import axios from "axios";
 
 export const fetchStart = (data) => {
   return (dispatch) => {
-    axios
-      .get("http://localhost:8000/items")
-      .then((res) => {
-        dispatch(fetchSuccess(res.data));
-      })
-      .catch((err) => dispatch(err.message));
+    axios.get("http://localhost:8000/items").then((res) => {
+      dispatch(fetchSuccess(res.data));
+    });
   };
 };
 
@@ -19,36 +16,19 @@ export const fetchSuccess = (data) => {
   };
 };
 
-export const fetchFailed = (err) => {
-  return {
-    type: actionTypes.FETCH_FAILED,
-    error: err,
-  };
-};
-
 // GET BY ID
 
 export const getByIdStart = (id) => {
   return (dispatch) =>
-    axios
-      .get(`http://localhost:8000/items/${id}`)
-      .then((res) => {
-        dispatch(getByIdSuccess(res.data));
-      })
-      .catch((err) => dispatch(getByIdFailed(err.message)));
+    axios.get(`http://localhost:8000/items/${id}`).then((res) => {
+      dispatch(getByIdSuccess(res.data));
+    });
 };
 
 export const getByIdSuccess = (data) => {
   return {
     type: actionTypes.GET_BY_ID_SUCCESS,
     data: data,
-  };
-};
-
-export const getByIdFailed = (err) => {
-  return {
-    type: actionTypes.GET_BY_ID_FAILED,
-    error: err,
   };
 };
 
@@ -93,10 +73,19 @@ export const removeAllCartItems = () => {
   };
 };
 
-export const isSelected = (id, event) => {
-  console.log(event);
+export const isSelected = (id) => {
+  return (dispatch) => {
+    axios
+      .get(`http://localhost:8000/items/${id}`)
+      .then((res) => dispatch(selected(res.data.price, res.data.qty, id)));
+  };
+};
+
+export const selected = (prevPrice, qty, id) => {
   return {
-    type: actionTypes.IS_SELECTED,
+    type: actionTypes.SELECTED,
     id,
+    prevPrice,
+    qty,
   };
 };

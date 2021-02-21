@@ -115,7 +115,7 @@
   box-shadow: 0px -5px 13px 5px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .product {
     grid-template-columns: 1fr;
     margin-bottom: 90px;
@@ -123,14 +123,15 @@
   }
 
   .product-details h3 {
-    margin: 5px 0;
     color: #111;
     padding-left: 10px;
+    margin: 0 0 10px 0;
   }
 
   .product-img {
     height: 430px;
     width: 375px;
+    margin: 0 auto;
   }
 
   .img-big {
@@ -154,6 +155,7 @@
 
   .product-details {
     width: 375px;
+    margin: 0 auto;
   }
 
   .product-price.product-info {

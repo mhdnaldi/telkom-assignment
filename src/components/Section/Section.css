@@ -31,7 +31,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .section {
     width: 375px;
   }

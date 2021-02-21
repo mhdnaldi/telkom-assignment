@@ -2,7 +2,6 @@ import * as actionTypes from "../actions/actionTypes";
 const initialState = {
   data: [],
   cart: [],
-  error: null,
   dataById: {},
   showModal: null,
 };
@@ -14,20 +13,10 @@ const reducer = (state = initialState, action) => {
         ...state,
         data: action.data,
       };
-    case actionTypes.FETCH_FAILED:
-      return {
-        ...state,
-        error: action.error,
-      };
     case actionTypes.GET_BY_ID_SUCCESS:
       return {
         ...state,
         dataById: action.data,
-      };
-    case actionTypes.GET_BY_ID_FAILED:
-      return {
-        ...state,
-        error: action.error,
       };
 
     // CART
@@ -44,7 +33,6 @@ const reducer = (state = initialState, action) => {
       }
 
     case actionTypes.REMOVE_FROM_CART:
-      console.log(action.id);
       return {
         ...state,
         cart: state.cart.filter((el) => el.id !== action.id),
@@ -80,19 +68,14 @@ const reducer = (state = initialState, action) => {
         cart: [],
       };
 
-    case actionTypes.IS_SELECTED:
-      // state isSelected = true
+    case actionTypes.SELECTED:
       let updatedCart = [...state.cart];
       let index = updatedCart.findIndex((el) => el.id === action.id);
-      let temp = {
-        prevPrice: updatedCart[index].price,
-      };
-      console.log(temp.prevPrice);
       updatedCart[index].checked = !updatedCart[index].checked;
       if (!updatedCart[index].checked) {
-        updatedCart[index].price = 0; // PROBLEM
+        updatedCart[index].price = 0;
       } else {
-        // updatedCart[index].price = temp.prevPrice;
+        updatedCart[index].price = action.prevPrice; // PROBLEM
       }
       return {
         ...state,

@@ -18,8 +18,18 @@ const Cart = (props) => {
       setTotalPrice(0);
     }
     if (props.cartData.length > 0) {
+      // SET QTY
+      let newQty = 0;
+      for (let i = 0; i < props.cartData.length; i++) {
+        if (props.cartData[i].checked === false) {
+          newQty += 1;
+        }
+      }
       let qty = props.cartData.map((el) => el.qty).reduce((el, i) => el + i);
-      setQuantity(qty);
+      let updatedQty = qty - newQty;
+      setQuantity(updatedQty);
+
+      // SET PRICE
       let total = props.cartData
         .map((el) => el.price * el.qty)
         .reduce((el, i) => el + i);
@@ -39,7 +49,7 @@ const Cart = (props) => {
         <div className='store-info'>
           <div
             className='selected'
-            onClick={(event) => props.isSelectedHandler(el.id, event)}>
+            onClick={(event) => props.isSelectedHandler(el.id)}>
             {el.checked && <img className='is-selected' src={check} alt='' />}
           </div>
           <img
@@ -128,7 +138,7 @@ const mapDispatchToProps = (dispatch) => {
     decrement: (id) => dispatch(actions.decrement(id)),
     removeFromCart: (id) => dispatch(actions.removeFromCart(id)),
     removeAllCartItems: () => dispatch(actions.removeAllCartItems()),
-    isSelectedHandler: (id, event) => dispatch(actions.isSelected(id, event)),
+    isSelectedHandler: (id) => dispatch(actions.isSelected(id)),
   };
 };
 
